@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Fri Apr 09 2021 22:39:41 GMT+0300 (East Africa Time)
+------------------------------------------------------
+
+Modified files:
+* src/Header.js
+* src/Product.js
+* src/StateProvider.js
+* src/index.js
+* src/reducer.js
+
+
+Created files:
+* .autogit/logs/log-9-3-2021-22-9-34.txt
+
+
+Deleted files:
+
+
+Renamed files:
