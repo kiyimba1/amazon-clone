@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Sat Apr 10 2021 00:40:05 GMT+0300 (East Africa Time)
+------------------------------------------------------
+
+Modified files:
+* src/Checkout.js
+* src/Subtotal.js
+* src/reducer.js
+
+
+Created files:
+* .autogit/logs/log-10-3-2021-0-9-59.txt
+* src/CheckoutProduct.css
+* src/CheckoutProduct.js
+
+
+Deleted files:
+
+
+Renamed files:
