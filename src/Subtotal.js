@@ -6,14 +6,18 @@ import { useStateValue } from './StateProvider'
 function Subtotal() {
     const [{ basket }, dispatch] = useStateValue();
 
+    const getBusketPrice = () => {
+        return basket.keys('price').reduce((sum, key) => sum + parseFloat(price[key]));
+    }
+
     return (
         <div className="subtotal">
             <CurrencyFormat
                 renderText={(value) => (
                     <>
                         <p>
-                            Subtotal ({busket?.length} items):
-                        <strong>0</strong>
+                            Subtotal ({basket?.length} items):
+                        <strong>{getBusketPrice()}</strong>
                         </p>
                         <small className="subtotal__gift">
                             <input type="checkbox" />This order contains a gift.
