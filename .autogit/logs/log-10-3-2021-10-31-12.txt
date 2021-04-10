@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Sat Apr 10 2021 10:31:12 GMT+0300 (East Africa Time)
+------------------------------------------------------
+
+Modified files:
+* src/App.js
+* src/Header.js
+
+
+Created files:
+* .autogit/logs/log-10-3-2021-9-30-59.txt
+* src/Login.css
+* src/Login.js
+
+
+Deleted files:
+
+
+Renamed files:
