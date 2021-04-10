@@ -11,6 +11,12 @@ function Login() {
         //some fancy firbase login shiiiiiiiiiiiiiiiittttttttt...........
     }
 
+    const register = e => {
+        e.preventDefault();
+
+        //do some fancy firebase register shiiiitttt........
+    }
+
     return (
         <div className='login'>
             <Link to='/'>
@@ -28,7 +34,7 @@ function Login() {
                 <p>
                     By signing in  you agree to Amazon's Conditions of Use & Sale. Please see our Privacy Notice, our Cookies Notice and our Interest-Based Ads.
                 </p>
-                <button className='login__registerButton'>Create your Amazon Account</button>
+                <button onClick={register} className='login__registerButton'>Create your Amazon Account</button>
             </div>
 
         </div>
