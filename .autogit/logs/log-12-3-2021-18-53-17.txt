@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Mon Apr 12 2021 18:53:17 GMT+0300 (East Africa Time)
+------------------------------------------------------
+
+Modified files:
+* .eslintcache
+* src/App.js
+
+
+Created files:
+* src/Payment.css
+* src/Payment.js
+
+
+Deleted files:
+
+
+Renamed files:
