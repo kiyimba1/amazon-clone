@@ -5,7 +5,7 @@ import Checkout from './Checkout'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Login from './Login';
 import { useEffect } from 'react';
-import { auth } from "./firebase"
+import { auth } from "./firebase";
 import { useStateValue } from './StateProvider';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     //will only run once when the app component loads....
-    auth.onAuthStateChange(authUser => {
+    auth.onAuthStateChanged(authUser => {
       console.log('THIS USER IS >>> ', authUser);
 
       if (authUser) {

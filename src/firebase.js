@@ -11,9 +11,9 @@ const firebaseConfig = {
     measurementId: "G-LGCL453XCP"
 };
 
-const firbaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const db = firebaseApp.firestore();
-const auth = firebase.auth;
+const auth = firebase.auth();
 
 export { db, auth };
