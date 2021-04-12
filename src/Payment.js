@@ -1,22 +1,31 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import React from 'react'
+import React, { useState } from 'react'
+import CurrencyFormat from 'react-currency-format';
 import { Link } from 'react-router-dom';
 import CheckoutProduct from './CheckoutProduct';
 import './Payment.css'
+import { getBasketTotal } from './reducer';
 import { useStateValue } from './StateProvider'
 
 function Payment() {
     const [{ basket, user }, dispatch] = useStateValue();
 
+
     const stripe = useStripe();
     const elements = useElements();
 
-    const handelSubmit = e => {
+    const [error, setError] = useState(null);
+    const [disabled, setDisabled] = useState(true);
+
+    const handleSubmit = e => {
         //do all fancy stripe things
     }
 
-    const handelChange = e => {
-        
+    const handleChange = event => {
+        //Listen for changes in the CardElement and display any errors as the customer types their card details
+        setDisabled(event.empty);
+        setError(event.error ? event.error.message : "")
+
     }
 
     return (
@@ -57,8 +66,23 @@ function Payment() {
                     </div>
                     <div className="payment__details">
                         {/* Stripe magic..... */}
-                        <form onSubmit={handelSubmit}>
-                            <CardElement onChange={ handelChange }/>
+                        <form onSubmit={handleSubmit}>
+                            <CardElement onChange={handleChange} />
+
+                            <div className='payment__priceContainer'>
+                                <CurrencyFormat
+                                    renderText={(value) => (
+                                        <>
+                                            <h3>Order Total: {value}</h3>
+                                        </>
+                                    )}
+                                    decimalScale={2}
+                                    value={getBasketTotal(basket)}
+                                    displayType={"text"}
+                                    thousandSeparator={true}
+                                    prefix={"$"}
+                                />
+                            </div>
                         </form>
                     </div>
 

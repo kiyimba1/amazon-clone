@@ -11,7 +11,7 @@ import Payment from './Payment';
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 
-const promise = loadStripe('{/** stripe public key */ }')
+const promise = loadStripe('pk_test_51IfWdILfjOLSl3iCTw3GrioDurNciCc02Ky2988RjFP1AoLn8r3sZzY38OBq3TsLmB3XcthO6T23wLeqU46DjGkI00iQtXwMd6')
 
 function App() {
   const [{ }, dispatch] = useStateValue();
