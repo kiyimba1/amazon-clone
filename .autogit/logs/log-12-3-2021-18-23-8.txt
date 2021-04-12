@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Mon Apr 12 2021 18:23:08 GMT+0300 (East Africa Time)
+------------------------------------------------------
+
+Modified files:
+* .eslintcache
+* src/Checkout.js
+* src/CheckoutProduct.js
+* src/Subtotal.js
+* src/reducer.js
+
+
+Created files:
+* .autogit/logs/log-12-3-2021-17-53-12.txt
+
+
+Deleted files:
+
+
+Renamed files:
