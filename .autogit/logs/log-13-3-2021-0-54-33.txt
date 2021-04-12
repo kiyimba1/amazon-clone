@@ -1,0 +1,23 @@
+-------------------- Auto-Git Log --------------------
+		Tue Apr 13 2021 00:54:33 GMT+0300 (East Africa Time)
+------------------------------------------------------
+
+Modified files:
+* .eslintcache
+* firebase.json
+* src/Payment.js
+
+
+Created files:
+* .autogit/logs/log-13-3-2021-0-24-25.txt
+* functions/.eslintrc.js
+* functions/.gitignore
+* functions/index.js
+* functions/package-lock.json
+* functions/package.json
+
+
+Deleted files:
+
+
+Renamed files:
