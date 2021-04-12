@@ -30,7 +30,7 @@ function Header() {
                 <Link to={!user && "/login"}>
                     <div className='header__option'>
                         <span className='header__optionLineOne'>
-                            {user ? 'Sign Out' : 'Sign in'}
+                            {user ? user?.email : 'Sign in'}
                         </span>
                         <span className='header__optionLineTwo'>
                             {user ? 'Sign Out' : 'Sign in'}
