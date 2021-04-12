@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Mon Apr 12 2021 17:53:12 GMT+0300 (East Africa Time)
+------------------------------------------------------
+
+Modified files:
+* .eslintcache
+* package-lock.json
+* package.json
+* src/Header.js
+* src/Subtotal.js
+
+
+Created files:
+* .autogit/logs/log-12-3-2021-17-22-56.txt
+* .firebase/hosting.YnVpbGQ.cache
+
+
+Deleted files:
+
+
+Renamed files:
