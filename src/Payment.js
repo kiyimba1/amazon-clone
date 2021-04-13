@@ -1,5 +1,5 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import instance from './axios';
+import axios from 'axios';
 
 import React, { useEffect, useState } from 'react'
 import CurrencyFormat from 'react-currency-format';
@@ -22,22 +22,22 @@ function Payment() {
 
     const [succeeded, setSucceeded] = useState(false);
     const [processing, setProcessing] = useState("");
-    const [clientSecret, setClientSecret] = useState(true);
+    const [clientSecret, setClientSecret] = useState("");
 
     useEffect(() => {
         // generate the special stripe secret which allows us to charge a customer
         const getClientSecret = async () => {
-            try {
-                const response = await instance({
-                    method: 'post',
-                    // Stripe expects the total in a currencies subunits
-                    url: `/payments/create?total=${getBasketTotal(basket) * 100}`
-                });
-                setClientSecret(response.data.clientSecret)
-            }
-            catch (error) {
-                console.log(error)
-            }
+            // try {
+            const response = await axios.post(
+                'http://localhost:5001/clone-7ec17/us-central1/api/payments/create', null, { params: getBasketTotal(basket) * 100 }
+                // Stripe expects the total in a currencies subunits
+                // url: `/payments/create?total=${getBasketTotal(basket) * 100}`
+            );
+            setClientSecret(response.data.clientSecret)
+            // }
+            // catch (error) {
+            //     console.log(error)
+            // }
         }
 
         getClientSecret();
@@ -60,7 +60,7 @@ function Payment() {
             setError(null);
             setProcessing(false);
 
-            history.replaceState('/orders');
+            history.replace('/orders');
         })
     }
 
