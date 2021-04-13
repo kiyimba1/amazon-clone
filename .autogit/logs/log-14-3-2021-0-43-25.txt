@@ -1,0 +1,22 @@
+-------------------- Auto-Git Log --------------------
+		Wed Apr 14 2021 00:43:25 GMT+0300 (East Africa Time)
+------------------------------------------------------
+
+Modified files:
+* .eslintcache
+* functions/firebase-debug.log
+* functions/index.js
+* src/App.js
+* src/Login.js
+* src/Orders.js
+* src/Payment.js
+
+
+Created files:
+* .autogit/logs/log-14-3-2021-0-13-12.txt
+
+
+Deleted files:
+
+
+Renamed files:

@@ -47,6 +47,8 @@ function Payment() {
     }, [basket])
 
     console.log('THE SECRET IS', clientSecret)
+    console.log(user)
+
 
     const handleSubmit = async (event) => {
         //do all fancy stripe things
@@ -59,8 +61,9 @@ function Payment() {
             }
         }).then(({ paymentIntent }) => {
             //payment intent = payment confirmation
+            console.log(paymentIntent)
             db.collection('users')
-                .doc(user?.id)
+                .doc(user?.uid)
                 .collection('orders')
                 .doc(paymentIntent.id)
                 .set({
