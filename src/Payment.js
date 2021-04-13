@@ -28,8 +28,9 @@ function Payment() {
         // generate the special stripe secret which allows us to charge a customer
         const getClientSecret = async () => {
             // try {
+
             const response = await axios.post(
-                'http://localhost:5001/clone-7ec17/us-central1/api/payments/create', null, { params: getBasketTotal(basket) * 100 }
+                'http://localhost:5001/clone-7ec17/us-central1/api/payments/create', null, { params: { total: getBasketTotal(basket) * 100 } }
                 // Stripe expects the total in a currencies subunits
                 // url: `/payments/create?total=${getBasketTotal(basket) * 100}`
             );
