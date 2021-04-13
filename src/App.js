@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     //will only run once when the app component loads....
     auth.onAuthStateChanged(authUser => {
-      console.log('THIS USER IS >>> ', authUser);
+      
 
       if (authUser) {
         //the user just loggedin / the user was logged in
@@ -50,8 +50,8 @@ function App() {
             </Elements>
           </Route>
           <Route path="/orders">
-            <Header />            
-              <Ordersders />            
+            <Header />
+            <Orders />
           </Route>
           <Route path="/login">
             <Login />

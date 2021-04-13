@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import CurrencyFormat from 'react-currency-format';
 import { Link, useHistory } from 'react-router-dom';
 import CheckoutProduct from './CheckoutProduct';
+import { db } from './firebase';
 import './Payment.css'
 import { getBasketTotal } from './reducer';
 import { useStateValue } from './StateProvider'
@@ -35,6 +36,7 @@ function Payment() {
                 // url: `/payments/create?total=${getBasketTotal(basket) * 100}`
             );
             setClientSecret(response.data.clientSecret)
+            console.log(response)
             // }
             // catch (error) {
             //     console.log(error)
@@ -57,6 +59,17 @@ function Payment() {
             }
         }).then(({ paymentIntent }) => {
             //payment intent = payment confirmation
+            db.collection('users')
+                .doc(user?.id)
+                .collection('orders')
+                .doc(paymentIntent.id)
+                .set({
+                    basket: basket,
+                    amount: paymentIntent.amount,
+                    created: paymentIntent.created
+                })
+
+
             setSucceeded(true);
             setError(null);
             setProcessing(false);
