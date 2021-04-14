@@ -35,7 +35,7 @@ function Payment() {
                 // Stripe expects the total in a currencies subunits
                 // url: `/payments/create?total=${getBasketTotal(basket) * 100}`
             );
-            setClientSecret(response.data.clientSecret)
+            setClientSecret(response?.data.clientSecret)
             console.log(response)
             // }
             // catch (error) {
@@ -46,14 +46,15 @@ function Payment() {
         getClientSecret();
     }, [basket])
 
-    console.log('THE SECRET IS', clientSecret)
-    console.log('user_id', user.uid)
+    // console.log('THE SECRET IS', clientSecret)
+    // console.log('user_id', user.uid)
 
 
     const handleSubmit = async (event) => {
         //do all fancy stripe things
         event.preventDefault();
         setProcessing(true);
+        console.log(clientSecret)
 
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
