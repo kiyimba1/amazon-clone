@@ -47,7 +47,7 @@ function Payment() {
     }, [basket])
 
     console.log('THE SECRET IS', clientSecret)
-    console.log('user', user)
+    console.log('user_id', user.uid)
 
 
     const handleSubmit = async (event) => {
@@ -61,6 +61,7 @@ function Payment() {
             }
         }).then(({ paymentIntent }) => {
             //payment intent = payment confirmation
+            console.log(paymentIntent.id)
             db
                 .collection('users')
                 .doc(user?.uid)
